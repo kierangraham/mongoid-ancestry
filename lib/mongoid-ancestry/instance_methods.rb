@@ -88,7 +88,7 @@ module Mongoid
     end
 
     def ancestors depth_options = {}
-      self.base_class.scope_depth(depth_options, depth).where(ancestor_conditions)
+      self.base_class.scope_depth(depth_options, depth).in(ancestor_conditions)
     end
 
     def path_ids
@@ -100,7 +100,7 @@ module Mongoid
     end
 
     def path depth_options = {}
-      self.base_class.scope_depth(depth_options, depth).where(path_conditions)
+      self.base_class.scope_depth(depth_options, depth).in(path_conditions)
     end
 
     def depth
