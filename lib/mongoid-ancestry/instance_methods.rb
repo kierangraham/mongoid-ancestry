@@ -84,7 +84,7 @@ module Mongoid
     end
 
     def ancestor_conditions
-      { :_ids => ancestor_ids }
+      { :_id => ancestor_ids }
     end
 
     def ancestors depth_options = {}
@@ -96,7 +96,7 @@ module Mongoid
     end
 
     def path_conditions
-      { :_ids => path_ids }
+      { :_id.in => path_ids }
     end
 
     def path depth_options = {}
